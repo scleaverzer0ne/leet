@@ -1,0 +1,72 @@
+{
+  "name": "leet",
+  "version": "0.3.5",
+  "private": true,
+  "scripts": {
+    "build": "vue-cli-service electron:build",
+    "build:install": "vue-cli-service electron:build && cd dist_electron && \"leet-setup.exe\"",
+    "build:dist": "vue-cli-service build",
+    "serve": "vue-cli-service electron:serve",
+    "lint": "vue-cli-service lint",
+    "postinstall": "electron-builder install-app-deps",
+    "postuninstall": "electron-builder install-app-deps",
+    "push": "git add . && git commit -m \"minuet changes for developement\" && git push -u origin master",
+    "patch-push": "npm version patch --no-git-tag-version && git add . && git commit -m \"Patched somethings\" && git push -u origin master",
+    "minor-push": "npm version minor --no-git-tag-version && git add . && git commit -m \"Minor bug fixes and QOL improvement\" && git push -u origin master",
+    "major-push": "npm version major --no-git-tag-version && git add . && git commit -m \"Major release\" && git push -u origin master"
+  },
+  "main": "background.js",
+  "dependencies": {
+    "animejs": "^3.2.0",
+    "apexcharts": "^3.18.1",
+    "axios": "^0.19.2",
+    "core-js": "^3.6.5",
+    "moment": "^2.24.0",
+    "vue": "^2.6.11",
+    "vue-apexcharts": "^1.5.3",
+    "vue-cookies": "^1.7.0",
+    "vue-moment": "^4.1.0",
+    "vue-router": "^3.1.5",
+    "vue-session": "^1.0.0",
+    "vuetify": "^2.2.21"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^4.3.1",
+    "@vue/cli-plugin-eslint": "^4.3.1",
+    "@vue/cli-plugin-router": "^4.3.1",
+    "@vue/cli-service": "^4.3.1",
+    "@vue/eslint-config-standard": "^5.1.0",
+    "babel-eslint": "^10.0.3",
+    "electron": "6.0.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "eslint-plugin-vue": "^6.1.2",
+    "sass": "^1.19.0",
+    "sass-loader": "^8.0.0",
+    "vue-cli-plugin-electron-builder": "^1.4.6",
+    "vue-cli-plugin-vuetify": "^2.0.5",
+    "vue-template-compiler": "^2.6.11",
+    "vuetify-loader": "^1.3.0"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "@vue/standard"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
+}
